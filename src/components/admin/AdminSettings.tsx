@@ -391,14 +391,16 @@ const AdminSettings = () => {
                         </div>
                       </div>
                       
-                      {/* French Flag */}
+                      {/* Thailand Flag */}
                       <div>
-                        <h4 className="text-sm font-medium mb-2">French Flag</h4>
+                        <h4 className="text-sm font-medium mb-2">Thailand Flag</h4>
                         <div className="flex items-center">
-                          <div className="flex h-8 w-12 mr-3 rounded overflow-hidden shadow-md">
-                            <div className="w-1/3 h-full bg-[#0055A4]"></div>
-                            <div className="w-1/3 h-full bg-white"></div>
-                            <div className="w-1/3 h-full bg-[#EF4135]"></div>
+                          <div className="flex flex-col h-8 w-12 mr-3 rounded overflow-hidden shadow-md border border-gray-200">
+                            <div className="h-1/5 w-full bg-[#EF4135]"></div> {/* Red */}
+                            <div className="h-1/5 w-full bg-white"></div>      {/* White */}
+                            <div className="h-2/5 w-full bg-[#2D2A4A]"></div>  {/* Blue (official Thai flag blue) */}
+                            <div className="h-1/5 w-full bg-white"></div>      {/* White */}
+                            <div className="h-1/5 w-full bg-[#EF4135]"></div>  {/* Red */}
                           </div>
                           <span style={{ color: colors.secondary }} className="font-medium">Made in Thailand</span>
                         </div>
