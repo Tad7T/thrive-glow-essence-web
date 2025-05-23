@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 60 65% 97%;
+    --foreground: 30 20% 20%;
+
+    --card: 60 100% 99%;
+    --card-foreground: 30 20% 20%;
+
+    --popover: 60 65% 97%;
+    --popover-foreground: 30 20% 20%;
+
+    --primary: 60 80% 50%;
+    --primary-foreground: 30 40% 30%;
+
+    --secondary: 80 70% 95%;
+    --secondary-foreground: 30 40% 30%;
+
+    --muted: 60 80% 92%;
+    --muted-foreground: 30 25% 40%;
+
+    --accent: 80 70% 30%;
+    --accent-foreground: 60 80% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 80 40% 80%;
+    --input: 80 40% 80%;
+    --ring: 80 70% 30%;
+
+    --radius: 0.5rem;
+    
+    /* Custom Thrive colors */
+    --thrive-yellow: #FEF751;
+    --thrive-yellow-light: #FEF9CD;
+    --thrive-olive: #8A8B39;
+    --thrive-olive-light: #B9BA63;
+    --thrive-brown: #7D5A47;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    @apply font-bold text-thrive-brown;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 relative overflow-hidden;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-10 text-thrive-brown relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute left-0 -bottom-2 h-1 w-20 bg-thrive-olive rounded-full;
+  }
+  
+  .leaf-decoration {
+    @apply absolute opacity-10 -z-10;
+  }
+
+  /* Admin UI components */
+  .admin-card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-border;
+  }
+  
+  .admin-input {
+    @apply border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-thrive-olive;
+  }
+  
+  .admin-button-primary {
+    @apply bg-thrive-olive text-white px-4 py-2 rounded-md hover:bg-thrive-olive-light transition-colors;
+  }
+  
+  .admin-button-secondary {
+    @apply bg-white text-thrive-brown border border-thrive-brown/20 px-4 py-2 rounded-md hover:bg-thrive-brown/10 transition-colors;
+  }
+  
+  /* Interactive elements */
+  .animated-card {
+    @apply transform transition-all duration-500 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .pulse-animation {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .bounce-slow {
+    animation: bounce 3s ease-in-out infinite;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Admin animations */
+@keyframes slideFromRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-right {
+  animation: slideFromRight 0.3s forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* New animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Color transition */
+.color-transition {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Modern shadow effect */
+.modern-shadow {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.modern-shadow:hover {
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effect */
+.glow-on-hover {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-on-hover::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--thrive-yellow), var(--thrive-olive), var(--thrive-brown));
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.glow-on-hover:hover::before {
+  opacity: 0.7;
+}
