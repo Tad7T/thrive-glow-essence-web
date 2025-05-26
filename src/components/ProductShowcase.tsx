@@ -20,31 +20,31 @@ const ProductShowcase = () => {
           id: 'default-1',
           title: 'Thrive Facial Oil',
           description: 'Our signature facial oil for radiant skin',
-          imageUrl: 'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+          imageUrl: '/fallbackImages/thrive_1.JPG',
         },
         {
           id: 'default-2',
           title: 'Organic Cream',
           description: 'Deeply moisturizing, 100% organic cream',
-          imageUrl: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=982&q=80',
+          imageUrl: '/fallbackImages/thrive_2.JPG',
         },
         {
           id: 'default-3',
           title: 'Thrive Gift Set',
           description: 'Perfect gift for someone special',
-          imageUrl: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          imageUrl: '/fallbackImages/thrive_3.png',
         },
         {
           id: 'default-4',
           title: 'Hydrating Serum',
           description: 'Intensive hydration for all skin types',
-          imageUrl: 'https://images.unsplash.com/photo-1570194065650-d99fb4d8a609?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+          imageUrl: '/fallbackImages/thrive_1.JPG',
         },
         {
           id: 'default-5',
           title: 'Thrive Body Butter',
           description: 'Rich, nourishing body butter for silky smooth skin',
-          imageUrl: 'https://images.unsplash.com/photo-1601612628452-9e99ced43524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+          imageUrl: '/fallbackImages/thrive_2.JPG',
         }
       ]);
     }

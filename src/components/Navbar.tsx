@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -34,47 +33,52 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed w-full z-50 transition-all duration-300',
+        'fixed w-full z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-white/90 backdrop-blur-sm shadow-md py-2'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm py-2 border-b border-gray-100'
           : 'bg-transparent py-4'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-thrive-brown">THRIVE NATURALS</span>
+            <Link to="/" className="flex items-center group">
+                <span className="text-2xl font-bold text-[#14532d] tracking-tight group-hover:text-thrive-olive transition-colors duration-300">
+                  THRIVE NATURALS
+                </span>
             </Link>
-            <div className="flex items-center mb-4 ml-4 mt-4">
-              <div className="flex flex-col h-8 w-12 mr-3 rounded overflow-hidden shadow-md">
+            {/* <div className="hidden md:flex items-center ml-6">
+              <div className="flex flex-col h-8 w-12 mr-3 rounded overflow-hidden shadow-md border border-gray-200">
                 <div className="h-1/5 w-full bg-[#EF4135]"></div>
                 <div className="h-1/5 w-full bg-white"></div>
                 <div className="h-2/5 w-full bg-[#2D2A4A]"></div>
                 <div className="h-1/5 w-full bg-white"></div>
                 <div className="h-1/5 w-full bg-[#EF4135]"></div> 
               </div>
-              <span className="text-white font-medium text-lg">Made in Thailand</span>
-            </div>
+              <span className="text-green-700 font-medium text-sm uppercase tracking-wider">
+                Made in Thailand
+              </span>
+            </div> */}
           </div>
           
           {/* Desktop menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
+            <div className="ml-10 flex items-center space-x-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-thrive-brown hover:text-thrive-olive font-medium transition-colors"
+                  className="relative text-gray-700 hover:text-thrive-olive font-medium transition-colors duration-300 group"
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-thrive-olive transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
               <Link
                 to="/contact"
-                className="bg-thrive-olive text-white px-4 py-2 rounded-md hover:bg-thrive-olive-light transition-colors"
+                className="ml-4 bg-gradient-to-r from-thrive-olive to-thrive-olive-light text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                Contact
+                Contact Us
               </Link>
             </div>
           </div>
@@ -83,9 +87,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-thrive-brown hover:text-thrive-olive"
+              className="p-2 rounded-md text-thrive-brown hover:bg-gray-100 focus:outline-none transition-colors"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? (
+                <X size={28} className="text-thrive-olive" />
+              ) : (
+                <Menu size={28} />
+              )}
             </button>
           </div>
         </div>
@@ -93,36 +102,45 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div
           className={cn(
-            'md:hidden absolute left-0 right-0 bg-white transition-all duration-300 overflow-hidden shadow-md',
-            isOpen ? 'max-h-96 py-4' : 'max-h-0'
+            'md:hidden fixed top-20 left-0 right-0 bg-white transition-all duration-500 ease-in-out overflow-hidden shadow-xl',
+            isOpen ? 'max-h-screen py-4 opacity-100' : 'max-h-0 opacity-0'
           )}
+          style={{ height: isOpen ? 'calc(100vh - 5rem)' : '0' }}
         >
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            <div className="py-2 mb-2 flex items-center">
-              <div className="flex h-5 w-8 mr-2 rounded overflow-hidden shadow-sm">
-                <div className="w-1/3 h-full bg-[#0055A4]"></div>
-                <div className="w-1/3 h-full bg-white"></div>
-                <div className="w-1/3 h-full bg-[#EF4135]"></div>
+          <div className="px-6 pt-2 pb-8 space-y-6">
+            <div className="py-2 flex items-center justify-center">
+              <div className="flex h-6 w-10 mr-3 rounded overflow-hidden shadow-md border border-gray-200">
+                <div className="h-1/5 w-full bg-[#EF4135]"></div>
+                <div className="h-1/5 w-full bg-white"></div>
+                <div className="h-2/5 w-full bg-[#2D2A4A]"></div>
+                <div className="h-1/5 w-full bg-white"></div>
+                <div className="h-1/5 w-full bg-[#EF4135]"></div>
               </div>
-              <span className="font-medium text-thrive-brown">Made in Thailand</span>
+              <span className="font-medium text-gray-700">Made in Thailand</span>
             </div>
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-thrive-brown hover:text-thrive-olive"
+            
+            <div className="border-t border-gray-100 pt-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-4 px-4 text-lg text-gray-700 hover:text-thrive-olive hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+            
+            <div className="pt-4">
+              <Link
+                to="/contact"
+                className="block w-full py-3 bg-gradient-to-r from-thrive-olive to-thrive-olive-light text-white px-6 rounded-full hover:shadow-lg text-center text-lg font-medium transition-all"
                 onClick={() => setIsOpen(false)}
               >
-                {item.name}
-              </a>
-            ))}
-            <Link
-              to="/contact"
-              className="block py-2 mt-4 bg-thrive-olive text-white px-4 rounded-md hover:bg-thrive-olive-light text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </div>
