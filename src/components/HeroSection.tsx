@@ -22,6 +22,7 @@ const HeroSection = () => {
     '/fallbackImages/thrive_1.JPG',
     '/fallbackImages/thrive_2.JPG',
     '/fallbackImages/thrive_3.png',
+    // '/lovable-uploads/b49771c0-c998-442e-a1a9-6cabc432cb90.png'
 
   ];
   

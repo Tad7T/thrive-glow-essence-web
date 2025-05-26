@@ -15,19 +15,19 @@ const IngredientsSection = () => {
       id: 'default-1',
       title: 'Castor Oil',
       description: 'Rich in nutrients, castor oil nourishes and strengthens hair, promoting growth.',
-      imageUrl: '/lovable-uploads/b49771c0-c998-442e-a1a9-6cabc432cb90.png'
+      imageUrl: '/fallbackImages/castor_oil.png'
     },
     {
       id: 'default-2',
       title: 'Rosemary Oil',
       description: 'Stimulates hair follicles and improves circulation, potentially enhancing hair growth.',
-      imageUrl: '/lovable-uploads/b49771c0-c998-442e-a1a9-6cabc432cb90.png'
+      imageUrl: '/fallbackImages/rosemary_oil.png'
     },
     {
       id: 'default-3',
       title: 'Coconut Oil',
       description: 'Known for its moisturizing properties, coconut oil helps prevent protein loss and keeps hair strong.',
-      imageUrl: '/lovable-uploads/b49771c0-c998-442e-a1a9-6cabc432cb90.png'
+      imageUrl: '/fallbackImages/coconut_oil.png'
     },
   ];
 
