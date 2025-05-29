@@ -113,7 +113,7 @@ const ProductShowcase = () => {
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {products.map((product) => (
                     <CarouselItem key={product.id} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                      <div className="group h-full rounded-2xl overflow-hidden bg-white border-2 border-thrive-olive/10 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5">
+                      <div className="group h-full rounded-2xl overflow-hidden bg-green-500 border-2 border-thrive-olive/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5">
                         <div className="aspect-square w-full overflow-hidden relative">
                           <img 
                             src={product.imageUrl} 
@@ -123,20 +123,20 @@ const ProductShowcase = () => {
                               (e.target as HTMLImageElement).src = '/placeholder.svg';
                             }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
+                          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
                             <div className="p-4 text-white text-center w-full transform translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                              <span className="inline-block px-4 py-2 bg-thrive-olive rounded-full text-sm font-medium backdrop-blur-sm border border-white/20">
+                              <span className="inline-block px-4 py-2 bg-white rounded-full text-sm font-medium text-thrive-olive backdrop-blur-sm border border-white/20">
                                 Discover More
                               </span>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                         <div className="p-5 space-y-2">
-                          <h3 className="font-bold text-xl mb-1 text-thrive-brown group-hover:text-thrive-olive transition-colors duration-300">{product.title}</h3>
-                          <p className="text-gray-600">{product.description}</p>
+                          <h3 className="font-bold text-xl mb-1 text-black group-hover:text-white transition-colors duration-300">{product.title}</h3>
+                          <p className="text-white/90">{product.description}</p>
                           <div className="flex justify-between items-center pt-2">
-                            <span className="font-bold text-thrive-brown">{product.price}</span>
-                            <button className="text-thrive-olive hover:text-thrive-brown transition-colors">
+                            {/* <span className="font-bold text-white">{product.price}</span> */}
+                            <button className="text-black hover:text-white transition-colors">
                               <ShoppingBag className="w-5 h-5" />
                             </button>
                           </div>

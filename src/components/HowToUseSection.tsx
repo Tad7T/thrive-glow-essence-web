@@ -12,12 +12,12 @@ interface StepProps {
 const Step = ({ icon, title, description, delay }: StepProps) => {
   return (
     <RevealOnScroll delay={delay}>
-      <div className="group relative h-full p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-thrive-olive/10 hover:border-thrive-olive/30">
+      <div className="group relative h-full p-6 bg-green-500 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-thrive-olive/10 hover:border-thrive-olive/30">
         <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 flex items-center justify-center bg-thrive-olive rounded-full border-4 border-white shadow-md group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
         <div className="pt-8 text-center">
-          <h3 className="font-bold text-xl mb-3 text-thrive-brown group-hover:text-thrive-olive transition-colors">
+          <h3 className="font-bold text-xl mb-3 text-black group-hover:text-thrive-olive transition-colors">
             {title}
           </h3>
           <p className="text-gray-600 leading-relaxed">{description}</p>
@@ -81,13 +81,13 @@ const HowToUseSection = () => {
         </div>
         
         <RevealOnScroll delay={600}>
-          <div className="mt-16 bg-white p-6 rounded-xl shadow-sm border border-thrive-olive/20 flex items-start space-x-4 max-w-2xl mx-auto">
+          <div className="mt-16 bg-green-500 p-6 rounded-xl shadow-sm border border-thrive-olive/20 flex items-start space-x-4 max-w-2xl mx-auto">
             <div className="flex-shrink-0 w-10 h-10 bg-thrive-brown/10 rounded-full flex items-center justify-center">
               <AlertTriangle className="text-thrive-brown" size={20} />
             </div>
             <div>
-              <h4 className="font-semibold text-thrive-brown mb-1">Important Safety Note</h4>
-              <p className="text-gray-600">
+              <h4 className="font-semibold text-black mb-1">Important Safety Note</h4>
+              <p className="text-gray">
                 Perform a sensitivity test first: Place a small sample on your skin and observe for 24 hours to ensure there is no irritation or discomfort.
               </p>
             </div>

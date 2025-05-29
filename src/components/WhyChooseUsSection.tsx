@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAdmin } from '@/contexts/AdminContext';
 import { CheckCircle, Star, Leaf, Award, Heart, Shield } from 'lucide-react';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import RevealOnScroll from './RevealOnScroll';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -76,23 +76,40 @@ const WhyChooseUsSection = () => {
           </div>
         </RevealOnScroll>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-12">
           {features.map((feature, index) => (
-            <RevealOnScroll key={index} delay={index * 100}>
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-thrive-olive/10">
-                <div className="w-12 h-12 mb-4 flex items-center justify-center bg-thrive-olive/10 rounded-full">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-thrive-brown mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            </RevealOnScroll>
+            // <RevealOnScroll key={index} delay={index * 100}>
+            //   <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-thrive-olive/10">
+            //     <div className="w-12 h-12 mb-4 flex items-center justify-center bg-thrive-olive/10 rounded-full">
+            //       {feature.icon}
+            //     </div>
+            //     <h3 className="text-xl font-bold text-thrive-brown mb-3">{feature.title}</h3>
+            //     <p className="text-gray-600">{feature.description}</p>
+            //   </div>
+            // </RevealOnScroll>
+              <RevealOnScroll key={index} delay={index * 100}>
+                <Card className="border-none shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden bg-green-500 text-white hover:scale-105 transform transition-transform duration-300">
+                    <div className="w-12 h-12 mb-4 flex items-center justify-center bg-green-500 rounded-full">
+                    {React.cloneElement(feature.icon as React.ReactElement, { className: "w-5 h-5 text-black" })}
+                    </div>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl font-semibold text-black">
+                      {feature.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-black">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </RevealOnScroll>
           ))}
         </div>
         
         <RevealOnScroll delay={400}>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-thrive-brown mb-2">
+          <div className="text-center mb-12 mt-16">
+            <h3 className="text-3xl font-bold text-white-brown mb-2">
               Real Stories, Real Results
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -127,7 +144,7 @@ const WhyChooseUsSection = () => {
           ) : (
             displayTestimonials.map((testimonial, index) => (
               <RevealOnScroll key={testimonial.id} delay={index * 150}>
-                <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 h-full flex flex-col">
+                <div className="bg-green-500 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 h-full flex flex-col">
                   <div className="flex justify-center mb-4">
                     {testimonial.imageUrl ? (
                       <img 
@@ -141,7 +158,7 @@ const WhyChooseUsSection = () => {
                       />
                     ) : (
                       <div className="w-16 h-16 rounded-full bg-thrive-yellow/20 flex items-center justify-center">
-                        <Star className="w-6 h-6 text-thrive-olive" />
+                        <Star className="w-6 h-6 text-black" />
                       </div>
                     )}
                   </div>
@@ -150,11 +167,11 @@ const WhyChooseUsSection = () => {
                       <Star key={i} className="w-5 h-5 fill-current text-yellow-400" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-600 italic mb-6 flex-grow">
+                  <blockquote className="text-gray italic mb-6 flex-grow">
                     "{testimonial.description}"
                   </blockquote>
-                  <div className="text-center mt-auto">
-                    <p className="font-bold text-thrive-brown">{testimonial.title}</p>
+                  <div className="text-center text-black mt-auto">
+                    <p className="font-bold text-gray">{testimonial.title}</p>
                     {testimonial.role && (
                       <p className="text-sm text-gray-500">{testimonial.role}</p>
                     )}

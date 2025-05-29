@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Leaf, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Leaf, ChevronLeft, ChevronRight, Link } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 import { useAdmin } from '@/contexts/AdminContext';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from './ui/button';
 
 const HeroSection = () => {
   const { contentItems, isLoading } = useAdmin();
@@ -101,7 +102,7 @@ const HeroSection = () => {
           <div className="text-center my-8 animate-fade-in max-w-4xl w-full">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-thrive-yellow to-white animate-text-shimmer">
-                HAIR ESSENCE OIL
+                HAIR GROWTH OIL
               </span>
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto backdrop-blur-sm bg-white/10 px-6 py-4 rounded-xl">
@@ -112,9 +113,12 @@ const HeroSection = () => {
 
         <RevealOnScroll delay={800}>
           <div className="mt-8 flex gap-4">
-            <button className="px-8 py-3 bg-thrive-olive hover:bg-thrive-olive-dark text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105">
-              Shop Now
-            </button>
+                <Button 
+                asChild
+                className="px-8 py-3 bg-thrive-olive hover:bg-thrive-olive-dark text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105"
+                >
+                <a href="/contact">Shop Now</a>
+                </Button>
             {/* <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-full transition-all duration-300 hover:bg-white/10 hover:shadow-lg">
               Learn More
             </button> */}

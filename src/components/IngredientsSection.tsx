@@ -65,7 +65,7 @@ const IngredientsSection = () => {
           ) : (
             displayIngredients.map((ingredient, index) => (
               <RevealOnScroll key={ingredient.id} delay={index * 100}>
-                <Card className="border-none shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden bg-white hover:scale-105 transform transition-transform duration-300">
+                <Card className="border-none shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden bg-green-500 hover:scale-105 transform transition-transform duration-300">
                   <div className="relative h-48 overflow-hidden bg-thrive-yellow/20">
                     {ingredient.imageUrl ? (
                       <img 
@@ -84,12 +84,12 @@ const IngredientsSection = () => {
                     )}
                   </div>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-xl font-semibold text-thrive-brown">
+                    <CardTitle className="text-xl font-semibold text-black">
                       {ingredient.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-600">
+                    <CardDescription className="text-gray">
                       {ingredient.description}
                     </CardDescription>
                   </CardContent>

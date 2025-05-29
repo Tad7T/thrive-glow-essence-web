@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center group">
                 <span className="text-2xl font-bold text-[#14532d] tracking-tight group-hover:text-thrive-olive transition-colors duration-300">
-                  THRIVE NATURALS
+                  THRIVE MIRACLE
                 </span>
             </Link>
             {/* <div className="hidden md:flex items-center ml-6">
